@@ -1,0 +1,30 @@
+{
+  "name": "alpine-nginx-proxy",
+  "version": "1.0.0",
+  "description": "An image based on Alpine with nginx reverse proxy",
+  "author": "Themeisle",
+  "license": "GPL-2.0+",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/preda-bogdan/alpine-nginx-proxy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/preda-bogdan/alpine-nginx-proxy/issues"
+  },
+  "homepage": "https://github.com/preda-bogdan/alpine-nginx-proxy#readme",
+  "scripts": {
+    "install": "docker pull koalaman/shellcheck:stable && docker pull hadolint/hadolint:latest",
+    "dock-lint": "docker run --rm -i hadolint/hadolint < ./Dockerfile"
+  },
+  "pre-commit": {
+    "run": [
+      "dock-lint"
+    ]
+  },
+  "devDependencies": {
+    "pre-commit": "^1.2.2",
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
+    "husky": "^0.14.3"
+  }
+}
